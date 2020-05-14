@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" />
+</head>
+<body>
+    <header class="container col-8">
+        <h1>Анкета волонтера todogood</h1>
+        <p>Добро пожаловать в сообщество todogood. Мы рады, что Вы присоединились к нашей платформе. </p>
+        <p>Просим вас заполнить  анкету волонтера. Это не займет более 5-ти минут.</p>
+        <p>Став частью сообщества,  вы будете получать приглашения  на наши мероприятия и информацию о новых проектах.</p>
+        <p>Все данные будут использоваться только в рабочих целях командой проекта todogood и не подлежат публичному распространению без согласования с респондентом.</p>
+        <p>По всем возникающим вопросам пишите нам на <a href="mailto:">volunteer@todogood.com</a></p>
+    </header>
+    <main class="container col-6">
+        <form>
+            <div class="form-group">
+                <label for="lastName">Фамилия</label>
+                <input type="text" class="form-control" id="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="firstName">Имя</label>
+                <input type="text" class="form-control" id="firstName"  required>
+            </div>
+            <div class="form-group">
+                <label for="fatherName">Отчество</label>
+                <input type="text" class="form-control" id="fatherName"  required>
+            </div>
+            <div class="form-group">
+                <label for="birthDate">Дата рождения (Вам должно быть не менее 18 лет)</label>
+                <input type="date" class="form-control" id="birthDate"  required>
+            </div>
+            <div class="form-group">
+                <label for="city">Город проживания (На текущий момент)</label>
+                <input type="text" class="form-control" id="city"  required>
+            </div>
+            <div class="form-group">
+                <label for="country">Страна проживания (На текущий момент)</label>
+                <input type="text" class="form-control" id="country"  required>
+            </div>
+            <h2>Контактная информация</h2>
+            <p>Нам важно быть на связи, чтобы поддержать Вас в процессе выполнения проекта. Мы гарантируем конфиденциальность предоставленной информации. </p>
+            <div class="form-group">
+                <label for="email">Адрес электронной почты</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="mobilePhone">Мобильный телефон</label>
+                <input type="number" class="form-control" id="mobilePhone"  required>
+            </div>
+            <div class="form-group">
+                <label for="facebook">Ваш профиль Facebook</label>
+                <input type="text" class="form-control" id="facebook"  >
+                <small>Просим дать ссылку на ваш профиль Facebook</small>
+            </div>
+            <div class="form-group">
+                <label for="workOrganisation">Место работы</label>
+                <input type="text" class="form-control" id="workOrganisation" required>
+                <small>Юридическую форму организации (ООО, АНО, …) указывать не надо, ставить в кавычки также не надо</small>
+            </div>
+
+            <div class="form-group">
+                <label>Сфера деятельности компании</label>
+                <select id="companyDirection" name="companyDirection[]" multiple class="form-control" required>
+                    <option value="1">Аудит</option>
+                    <option value="2">Здравоохранение и фармацевтика</option>
+                    <option value="3">Исследования, аналитика</option>
+                    <option value="4">Культура</option>
+                    <option value="5">Маркетинг, PR, коммуникации</option>
+                    <option value="6">Недвижимость, девелопмент</option>
+                    <option value="7">НКО</option>
+                    <option value="8">Образование</option>
+                    <option value="8">Организация мероприятий</option>
+                    <option value="10">Право</option>
+                    <option value="11">Реклама</option>
+                    <option value="12">Ритейл</option>
+                    <option value="13">Телекоммуникации</option>
+                    <option value="14">Финансы</option>
+                    <option value="15">Фрилансер</option>
+                    <option value="16">Энергетика</option>
+                    <option value="17">FMCG</option>
+                    <option value="18">HR, рекрутинг</option>
+                    <option value="19">IT</option>
+                    <option value="20">Online-магазин</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="otherCompanyDirection">Другое</label>
+                <input type="text" class="form-control" id="otherCompanyDirection"  >
+            </div>
+
+            
+
+
+
+            <div class="form-group">
+                <label>Функциональные навыки</label>
+                <select id="functionalSkills" name="functionalSkills[]" multiple class="form-control" required>
+                    <option value="1">Аудит бизнесс процессов</option>
+                    <option value="2">Аналитика</option>
+                    <option value="3">Исследования</option>
+                    <option value="4">НКО</option>
+                    <option value="5">Операционное управление</option>
+                    <option value="6">Продажи, фандрайзинг</option>
+                    <option value="7">Проектное управление</option>
+                    <option value="8">Разработка коммуникационной стратегии</option>
+                    <option value="8">Разработка орг. структуры</option>
+                    <option value="10">Разработка стратегии</option>
+                    <option value="11">Стратегический маркетинг</option>
+                    <option value="12">Стратегическое управление, консалтинг</option>
+                    <option value="13">Финансовое управление</option>
+                    <option value="14">Digital</option>
+                    <option value="15">GR</option>
+                    <option value="16">PR и коммуникации</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="otherFunctionalSkill">Другое</label>
+                <input type="text" class="form-control" id="otherFunctionalSkill"  >
+            </div>
+
+            <div class="form-group">
+                <label>Soft-skills</label>
+                <select id="softSkills" name="softSkills[]" multiple class="form-control" required>
+                    <option value="1">Коммуникативные навыки</option>
+                    <option value="2">Лидерство</option>
+                    <option value="3">Навыки публичных выступлений</option>
+                    <option value="4">Планирование и целепологание</option>
+                    <option value="5">Поиск и анализ информации</option>
+                    <option value="6">Проведение переговоров</option>
+                    <option value="7">Работа в команде</option>
+                    <option value="8">Разрешение конфликтов</option>
+                    <option value="8">Решение проблем</option>
+                    <option value="10">Создание презентаций</option>
+                    <option value="11">Фасилитация стратегических сессий</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="otherSoftSkill">Другое</label>
+                <input type="text" class="form-control" id="otherSoftSkill"  >
+            </div>
+
+            <div class="form-group">
+                <label for="teamLeadExpereance">Есть ли у вас опыт управления командой?. Если да, то опишите</label>
+                <input type="text" class="form-control" id="teamLeadExpereance" required>
+            </div>
+
+            <div class="form-group">
+                <label>Почему вы решили стать волонтером?</label>
+                <select id="reasons" name="reasons[]" multiple class="form-control" required>
+                    <option value="1">Возможность заниматься интелектуальным волонтерством</option>
+                    <option value="2">Непосредственное участие в развитии социально-ориентированных проектов и благотворительности</option>
+                    <option value="3">Pro - bono кейсы как дополнительный опыт в моем портфолио</option>
+                    <option value="4">Возможность отточить свои профессиональные навыки</option>
+                    <option value="5">Дополнительная возможность самореализации, персональное развитие</option>
+                    <option value="6">Интересно принять участие в новом проекте, полезный опыт</option>
+                    <option value="7">Интересно расширить список своих контактов (networking)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Soft-skills</label>
+                <select id="interests" name="interests[]" multiple class="form-control" required>
+                    <option value="1">Образование</option>
+                    <option value="2">Здравоохранение</option>
+                    <option value="3">Помощь детям</option>
+                    <option value="4">Помощь пожилым людям</option>
+                    <option value="5">Помощь животным</option>
+                    <option value="6">Гражданские права и свободы</option>
+                    <option value="7">Культура и творчество</option>
+                    <option value="8">Экология</option>
+                    <option value="8">Стихийные бедствия и ликвидация последствий</option>
+                    <option value="10">Здоровый образ жизни</option>
+                    <option value="11">Научные исследования</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="otherInterest">Другое</label>
+                <input type="text" class="form-control" id="otherInterest"  >
+            </div>
+
+            <div class="form-group">
+                <label for="currentProjectsInterest">Какие актуальные проекты Вас заинтересовали?</label>
+                <input type="text" class="form-control" id="currentProjectsInterest"  >
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+            
+          </form>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#companyDirection').multiselect({
+            nonSelectedText: 'Сфера деятельности компании',
+            enableFiltering: false,
+            enableCaseInsensitiveFiltering: true,
+            buttonWidth:'400px'
+            });
+        });
+
+        $(document).ready(function(){
+            $('#functionalSkills').multiselect({
+            nonSelectedText: 'Функциональные навыки',
+            enableFiltering: false,
+            enableCaseInsensitiveFiltering: true,
+            buttonWidth:'400px'
+            });
+        });
+        $(document).ready(function(){
+            $('#softSkills').multiselect({
+            nonSelectedText: 'Soft-skills',
+            enableFiltering: false,
+            enableCaseInsensitiveFiltering: true,
+            buttonWidth:'400px'
+            });
+        });
+    </script>
+</body>
+</html>
