@@ -7,18 +7,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" />
+    <link rel="stylesheet" href="./src/css/styles.css">
 </head>
 <body>
-    <header class="container col-8">
-        <h1>Анкета волонтера todogood</h1>
+    <header class="container col-6">
+        <h1 class="mt-5">Анкета волонтера todogood</h1>
         <p>Добро пожаловать в сообщество todogood. Мы рады, что Вы присоединились к нашей платформе. </p>
         <p>Просим вас заполнить  анкету волонтера. Это не займет более 5-ти минут.</p>
         <p>Став частью сообщества,  вы будете получать приглашения  на наши мероприятия и информацию о новых проектах.</p>
         <p>Все данные будут использоваться только в рабочих целях командой проекта todogood и не подлежат публичному распространению без согласования с респондентом.</p>
         <p>По всем возникающим вопросам пишите нам на <a href="mailto:">volunteer@todogood.com</a></p>
     </header>
-    <main class="container col-6">
-        <form>
+    <main class="container col-6 container-custom-width">
+        <form onSubmit="createLead(); return false">
             <div class="form-group">
                 <label for="lastName">Фамилия</label>
                 <input type="text" class="form-control" id="lastName" required>
@@ -31,7 +32,7 @@
                 <label for="fatherName">Отчество</label>
                 <input type="text" class="form-control" id="fatherName"  required>
             </div>
-            <div class="form-group">
+            <!--<div class="form-group">
                 <label for="birthDate">Дата рождения (Вам должно быть не менее 18 лет)</label>
                 <input type="date" class="form-control" id="birthDate"  required>
             </div>
@@ -167,7 +168,7 @@
             </div>
 
             <div class="form-group">
-                <label>Soft-skills</label>
+                <label>Какие направления деятельности организаций Вам интересны?</label>
                 <select id="interests" name="interests[]" multiple class="form-control" required>
                     <option value="1">Образование</option>
                     <option value="2">Здравоохранение</option>
@@ -191,7 +192,7 @@
             <div class="form-group">
                 <label for="currentProjectsInterest">Какие актуальные проекты Вас заинтересовали?</label>
                 <input type="text" class="form-control" id="currentProjectsInterest"  >
-            </div>
+            </div>-->
 
             <button type="submit" class="btn btn-primary">Submit</button>
             
@@ -204,32 +205,69 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+    <script src="https://webtracking-v01.bpmonline.com/JS/track-cookies.js"></script>
+    <script src="https://webtracking-v01.bpmonline.com/JS/create-object.js"></script>
     <script>
         $(document).ready(function(){
             $('#companyDirection').multiselect({
-            nonSelectedText: 'Сфера деятельности компании',
+            nonSelectedText: 'Нажмите и выберите из списка подходящие Вам ответы',
             enableFiltering: false,
             enableCaseInsensitiveFiltering: true,
-            buttonWidth:'400px'
+            buttonWidth:'570px'
             });
         });
 
         $(document).ready(function(){
             $('#functionalSkills').multiselect({
-            nonSelectedText: 'Функциональные навыки',
+            nonSelectedText: 'Нажмите и выберите из списка подходящие Вам ответы',
             enableFiltering: false,
             enableCaseInsensitiveFiltering: true,
-            buttonWidth:'400px'
+            buttonWidth:'570px'
             });
         });
         $(document).ready(function(){
             $('#softSkills').multiselect({
-            nonSelectedText: 'Soft-skills',
+            nonSelectedText: 'Нажмите и выберите из списка подходящие Вам ответы',
             enableFiltering: false,
             enableCaseInsensitiveFiltering: true,
-            buttonWidth:'400px'
+            buttonWidth:'570px'
             });
         });
+        $(document).ready(function(){
+            $('#reasons').multiselect({
+            nonSelectedText: 'Нажмите и выберите из списка подходящие Вам ответы',
+            enableFiltering: false,
+            enableCaseInsensitiveFiltering: true,
+            buttonWidth:'570px'
+            });
+        });
+        $(document).ready(function(){
+            $('#interests').multiselect({
+            nonSelectedText: 'Нажмите и выберите из списка подходящие Вам ответы',
+            enableFiltering: false,
+            enableCaseInsensitiveFiltering: true,
+            buttonWidth:'570px'
+            });
+        });
+    </script>>
+    <script>
+        var config = {
+            fields: {
+                "LastName": "#lastName",
+                "FirstName": "#firstName",
+                "FatherName": "#fatherName",
+            },
+            landingId: "9e7631bd-a91f-46f8-bf32-a1d0fa83f60c",
+            serviceUrl: "https://todogood.terrasoft.ru/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
+            redirectUrl: ""
+        };
+        /* Функция ниже создает Лид из введенных данных.
+        * Привяжите вызов этой функции к событию "onSubmit" формы или любому другому элементу события.
+        * Пример: <form class="mainForm" name="landingForm" onSubmit="createLead(); return false">
+        */
+        function createLead() {
+            landing.createLeadFromLanding(config)
+        }
     </script>
 </body>
 </html>
